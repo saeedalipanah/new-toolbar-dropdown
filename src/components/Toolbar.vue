@@ -50,7 +50,7 @@ export default {
           shortKey: "5",
         },
         {
-          name: "Locatin",
+          name: "Location",
           icon: "location_on",
           shortKey: "6",
         },
@@ -141,6 +141,7 @@ export default {
             transition: all 0.5s ease;
             color: #00c462;
             transform: scale(1.3) rotate(360deg);
+            
           }
         }
         .material-icons {
