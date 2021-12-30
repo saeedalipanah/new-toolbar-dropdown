@@ -25,12 +25,12 @@ export default {
       radiosValueContainer: null,
       tools: [
         {
-          name: "Hand",
+          name: "Hand-mode",
           icon: "back_hand",
           shortKey: "1",
         },
         {
-          name: "Resize",
+          name: "Resize-mode",
           icon: "photo_size_select_large",
           shortKey: "2",
         },
@@ -62,7 +62,14 @@ export default {
       ],
     };
   },
+  mounted(){
+    window.addEventListener('keydown', this.toToHandMode);
+  },
   methods: {
+    toToHandMode(e){
+      if(e.code == "Escape")
+      this.radiosValueContainer = 'Hand-mode';
+    }
   },
 };
 </script>
@@ -76,7 +83,7 @@ export default {
   justify-content: space-around;
   align-items: center;
   .toolbar-container {
-    width: 10%;
+    width: 8%;
     min-width: 110px;
     background: #4a5060;
     border-radius: 2px;
