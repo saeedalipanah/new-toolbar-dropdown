@@ -5,16 +5,15 @@
         <div class="wrapper">
           <input
             type="radio"
-            :name="tool.name"
             id="input"
-            v-model="radiosValueContainer"
+            v-model="selectedTool"
             :value="tool.name"
           />
           <span class="material-icons"> {{ tool.icon }} </span>
         </div>
       </div>
     </div>
-    <h1> Chosen Tool: {{ radiosValueContainer }}</h1>
+    <h1> Chosen Tool: {{ selectedTool }}</h1>
   </div>
 </template>
 
@@ -22,7 +21,7 @@
 export default {
   data() {
     return {
-      radiosValueContainer: null,
+      selectedTool: null,
       tools: [
         {
           name: "Hand-mode",
@@ -63,12 +62,12 @@ export default {
     };
   },
   mounted(){
-    window.addEventListener('keydown', this.toToHandMode);
+    window.addEventListener('keydown', this.ToHandMode);
   },
   methods: {
-    toToHandMode(e){
+    ToHandMode(e){
       if(e.code == "Escape")
-      this.radiosValueContainer = 'Hand-mode';
+      this.selectedTool = 'Hand-mode';
     }
   },
 };
@@ -90,6 +89,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 5px;
     // overflow: hidden;
     .tools {
       width: 100%;
